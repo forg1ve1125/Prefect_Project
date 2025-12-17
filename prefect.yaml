@@ -33,7 +33,7 @@ deployments:
     description: Process batch data
     flow: process_batch_flow
     entrypoint: flows/process_batch_flow.py:process_batch_flow
-    path: .
+    work_pool:
       name: Yichen_Test
     pull_steps:
       - type: git_clone
