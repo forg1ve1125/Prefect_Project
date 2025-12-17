@@ -6,11 +6,13 @@ deployments:
     work_pool:
       name: Yichen_Test
     pull_steps:
+      - type: set_working_directory
+        directory: "."
       - type: git_clone
         repository: "https://github.com/forg1ve1125/Prefect_Project.git"
         branch: "main"
       - type: pip_install_requirements
-        directory: "{{ pull_steps[0].directory }}"
+        directory: "."
         requirements_file: "requirements.txt"
     schedules:
       - cron: "10 17 17 * *"
