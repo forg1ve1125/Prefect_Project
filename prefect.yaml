@@ -11,7 +11,7 @@ deployments:
         repository: "https://github.com/forg1ve1125/Prefect_Project.git"
         branch: "main"
     schedules:
-      - cron: "10 12 17 * *"
+      - cron: "0 17 17 * *"
         timezone: Europe/Zurich
         active: true
 
@@ -27,7 +27,7 @@ deployments:
         repository: "https://github.com/forg1ve1125/Prefect_Project.git"
         branch: "main"
     schedules:
-      - cron: "30 12 17 * *"
+      - cron: "30 17 17 * *"
         timezone: Europe/Zurich
         active: true
 
@@ -43,6 +43,6 @@ deployments:
         repository: "https://github.com/forg1ve1125/Prefect_Project.git"
         branch: "main"
     schedules:
-      - cron: "0 13 17 * *"
+      - cron: "30 17 17 * *"
         timezone: Europe/Zurich
         active: true
