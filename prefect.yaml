@@ -10,7 +10,7 @@ deployments:
         repository: "https://github.com/forg1ve1125/Prefect_Project.git"
         branch: "main"
     schedules:
-      - cron: "6 17 17 * *"
+      - cron: "10 17 17 * *"
         timezone: Europe/Zurich
         active: true
 
