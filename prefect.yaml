@@ -3,7 +3,6 @@ deployments:
     description: Acquire currency exchange rate data
     flow: currency_acquisition_flow
     entrypoint: flows/currency_acquisition_flow.py:currency_acquisition_flow
-    path: .
     work_pool:
       name: Yichen_Test
     pull_steps:
@@ -19,7 +18,6 @@ deployments:
     description: Prepare batch data
     flow: prepare_batch_flow
     entrypoint: flows/prepare_batch_flow.py:prepare_batch_flow
-    path: .
     work_pool:
       name: Yichen_Test
     pull_steps:
@@ -36,7 +34,6 @@ deployments:
     flow: process_batch_flow
     entrypoint: flows/process_batch_flow.py:process_batch_flow
     path: .
-    work_pool:
       name: Yichen_Test
     pull_steps:
       - type: git_clone
