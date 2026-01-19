@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """
-本地 Flow 执行脚本
-直接在本地运行 Flow，而不依赖 Cloud 托管执行
-可以通过 Task Scheduler 或 cron 调度执行
+Local Flow Execution Script
+Executes Flows directly locally, without relying on Cloud managed execution.
+Can be scheduled via Task Scheduler or cron.
 """
 import asyncio
 from flows.currency_acquisition_flow import currency_acquisition_flow
@@ -11,7 +11,7 @@ from flows.process_batch_flow import process_batch_flow
 from datetime import datetime
 import logging
 
-# 配置日志
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 
 async def run_currency_acquisition():
-    """运行汇率获取 Flow"""
+    """Run Currency Acquisition Flow"""
     logger.info("=" * 70)
     logger.info("Starting: currency_acquisition_flow")
     logger.info("=" * 70)
@@ -36,7 +36,7 @@ async def run_currency_acquisition():
 
 
 async def run_prepare_batch():
-    """运行批次准备 Flow"""
+    """Run Batch Preparation Flow"""
     logger.info("=" * 70)
     logger.info("Starting: prepare_batch_flow")
     logger.info("=" * 70)
@@ -52,7 +52,7 @@ async def run_prepare_batch():
 
 
 async def run_process_batch():
-    """运行批次处理 Flow"""
+    """Run Batch Processing Flow"""
     logger.info("=" * 70)
     logger.info("Starting: process_batch_flow")
     logger.info("=" * 70)
@@ -68,7 +68,7 @@ async def run_process_batch():
 
 
 async def main():
-    """主程序 - 按顺序执行所有 Flow"""
+    """Main Program - Execute all Flows in sequence"""
     logger.info("")
     logger.info("╔" + "=" * 68 + "╗")
     logger.info("║" + " " * 68 + "║")
@@ -80,19 +80,19 @@ async def main():
     
     results = {}
     
-    # 执行流程 1: 汇率获取
+    # Execute Flow 1: Currency Acquisition
     results['currency_acquisition'] = await run_currency_acquisition()
     logger.info("")
     
-    # 执行流程 2: 批次准备
+    # Execute Flow 2: Batch Preparation
     results['prepare_batch'] = await run_prepare_batch()
     logger.info("")
     
-    # 执行流程 3: 批次处理
+    # Execute Flow 3: Batch Processing
     results['process_batch'] = await run_process_batch()
     logger.info("")
     
-    # 总结
+    # Summary
     logger.info("=" * 70)
     logger.info("Execution Summary")
     logger.info("=" * 70)
